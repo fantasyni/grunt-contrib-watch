@@ -166,8 +166,10 @@ module.exports = function(grunt) {
             taskrun.queue.push(target.name);
           }
 
-          // Run the tasks
-          taskrun.run();
+          if(target.actions.indexOf(status) !== -1) {
+              // Run the tasks
+            taskrun.run();
+          }
         });
 
         // On watcher error
